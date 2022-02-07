@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+            color: red;
+        }
+    </style>
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Hello javaScript</h1>
+    <section id="blogs">
+        <article>
+            <h1 id="firstH1" class="blog">hello there</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis quaerat laboriosam quidem, sunt blanditiis quisquam minima a error dolorem doloribus nam provident ratione harum quasi ea impedit eius. Aliquid, eum.</p>
+        </article>
+        <article>
+            <h1 class="blog">hello thfere</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit recusandae doloribus beatae eos possimus mollitia fugiat placeat, soluta voluptatibus cupiditate autem iure. Sed modi enim nesciunt odio exercitationem mollitia laboriosa
+                m.</p>
+        </article>
+        <article id="third-article">
+            <h1 id="third" class="blog">hello there</h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid, officiis, alias, ratione neque dolor illum facilis nulla quod quisquam delectus architecto. Nostrum placeat pariatur voluptatem facilis! Tempore aperiam earum minima!</p>
+        </article>
+    </section>
+    <script>
+     // create and add element by js
+
+     //first way
+     //================================================================
+     const article = document.createElement('article');
+     article.classList.add("blog") //to add previous style with the element and the style element must have run after this adding.
+     const h3 = document.createElement('h3');
+     h3.innerText = "My awesome blog";
+     const p = document.createElement('p');
+     p.innerText = "blog fpiefhepoqfpfjefj ofjpoefpejfpeff jf ijfpfpjf i fpf perf jfpef pijf pfrf rffpf ih fuqhpefifijdnidi  q i pfpi ijfihnadnfinida jifia faisfhn pipa";
+
+     //append the inner element
+     article.appendChild(h3);
+     article.appendChild(p);
+    
+     //append again to the add with blogs section.
+     const blogSection = document.getElementsByTag("blogs");
+     blogSection.appendChild(article);
+    
+     //secondWay
+     //================================================================
+     article.innerHTML = `
+     <h3>My Awesome Blog</h3>
+     <p>lorem ipsum dolor sit amet, consectetur adip</p>`
+
+
+
+
+    </script>
+</body>
+</html>
