@@ -40,12 +40,12 @@
 
         //keyup = mostly used
         document.getElementById("delete-confirm").addEventListener('keyup', function(even){
-            const deleteBtn = document.getElementById("delete-btn"
+            const deleteBtn = document.getElementById("delete-btn");
             if(event.target.value == "delete"){
-            deleteBtn.removeAttribute("disabled");
+            deleteBtn.removeAttribute("disabled");//this allow "delete" to be active when to write it properly.
             }
             else {
-                deleteBtn.setAttribute("disabled", true);
+                deleteBtn.setAttribute("disabled", true);//this allow if delete write inappropriate.
             }
             // console.log("keydown"); //to see, is everything is going right?
             const deleteField = document.getElementById("delete-confirm");

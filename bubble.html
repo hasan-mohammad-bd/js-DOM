@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Event Bubble vai</h2>
+    <section id="section-container">
+        <h4>Event Bubble vai</h4>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum.</li>
+            <li class="item" id="second-item">Vel, dolor.</li>
+            <li class="item">Quidem, sint.</li>
+            <li class="item">Vero, veritatis?</li>
+            <li class="item">Dignissimos, iusto.</li>
+            <li class="item">Repellendus, officia?</li>
+            <li class="item">Animi, saepe.</li>
+        </ul>
+    </section id="section-container">
+    <script>
+        //li //this item will execute first.
+        document.getElementById("second-item").addEventListener("click", function(event){
+            console.log("second item clicked");
+            event.stopPropagation(); //it stops bubbling effect.
+            event.stopImmediatePropagation(); //it stops execution of other element aspect this element where the element is same.
+        })
+        document.getElementById("second-item").addEventListener("click", function(event){
+            console.log("hello");
+        })
+        document.getElementById("second-item").addEventListener("click", function(event){
+            console.log("how are you");
+        })
+        document.getElementById("second-item").addEventListener("click", function(event){
+            console.log("ware");
+        })
+        //ul //this will be execute second.
+        document.getElementById("list-container").addEventListener("click", function(){
+            console.log("ul clicked");
+        })
+        //Section //this will be execute third.
+        document.getElementById("section-container").addEventListener("click", function(){
+            console.log("section-clicked");
+        })
+        //search for javaScript event bubble to see some structure.
+    </script>
+</body>
+</html>
