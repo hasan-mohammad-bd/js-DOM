@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- very common use case of onclick -->
+
+
+    <p id="clicking-method"></p>
+
+    <!-- example//direct with input field -->
+    <input id="name-field" type="text">
+    <button id="update-name">update</button>
+
+    <!--1 using function added by onclick -->
+    <button onclick="handleJustFunction()">just function</button>
+
+    <!-- 2 direct -->
+    <button id="handle-event">direct add event lesson</button>
+
+
+
+    <!-- javaScript -->
+    <script>
+        // 1- using function adding by onclick
+        function handleJustFunction(){
+            const p = document.getElementById("clicking-method");
+            p.innerText = "set by suing function"
+        }
+        //2- direct
+        document.getElementById("handle-event").addEventListener("click", function(){
+            const p = document.getElementById("clicking-method");
+            p.innerText = "set by direct addEventListener"
+        })
+        //3-direct with input field.
+        document.getElementById("update-name").addEventListener("click",function(){
+        const nameField = document.getElementById("name-field");
+        const p = document.getElementById("clicking-method");
+            p.innerText = nameField.value; //to get the input textInner. value is used.
+            nameField.value = ''; //it allows to empty the placeholder
+    })
+
+
+    </script>
+</body>
+</html>
