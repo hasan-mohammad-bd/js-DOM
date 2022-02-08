@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Event niya chickbaji</h1>
+
+    <!-- system no-1 -->
+    <!-- using onclick dom directly -->
+    <button onclick="document.body.style.backgroundColor='yellow'">click to yellow</button> 
+
+
+    <!-- system no-2 -->
+    <!-- using function -->
+    <button onclick="makeRed()">Click to red</button>
+
+
+    <!-- system no-3 -->
+    <!-- getting the ID & function -->
+    <button id="make-blue-button">click to Blue</button>
+
+    <!-- javaScript -->
+    <script>
+        //for system no-2
+        function makeRed(){
+            document.body.style.backgroundColor ="red";
+        }
+
+        //for system no-3
+        const blueButton = document.getElementById('make-blue-button');
+        //just set of the name of the function, don't use the parenthesis.
+        blueButton.onclick = makeBlue;
+
+        function makeBlue(){
+            document.body.style.backgroundColor = 'blue';
+        }
+    </script>
+</body>
+</html>
