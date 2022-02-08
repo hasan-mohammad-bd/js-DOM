@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Event niya chickbaji</h1>
+
+    <!-- system no-1 -->
+    <!-- using onclick dom directly -->
+    <button onclick="document.body.style.backgroundColor='yellow'">click to yellow</button> 
+
+
+    <!-- system no-2 -->
+    <!-- using function -->
+    <button onclick="makeRed()">Click to red</button>
+
+
+    <!-- system no-3 -->
+    <!-- getting the ID & function -->
+    <button id="make-blue-button">click to Blue</button>
+
+    <!-- system no-4 -->
+    <!-- using Anonymous Function -->
+    <button id="make-green-button">Click to green</button>
+
+
+    <!-- system no-5 -->
+    <!-- with addEventListener  -->
+    <button id="make-goldenrod">click to golden</button>
+
+    <!-- system no-6 -->
+    <!-- with addEventListener and Anonymous Function -->
+    <button id="make-hotpink">click to hotpink</button>
+
+    <!-- system no-7 -->
+    <!-- adding addEventListener directly to document.getTheElementById and using Anonymous function-->
+    <button id="light-blue">click to light blue</button>
+    <!-- javaScript -->
+    <script>
+        //for system no-2
+        function makeRed(){
+            document.body.style.backgroundColor ="red";
+        }
+
+        //for system no-3
+        const blueButton = document.getElementById('make-blue-button');
+        //just set of the name of the function, don't use the parenthesis.
+        blueButton.onclick = makeBlue;
+
+        function makeBlue(){
+            document.body.style.backgroundColor = 'blue';
+        }      
+       
+        //for system-4
+        const greenButton = document.getElementById('make-green-button');
+        //you dont need write the function name if you directly call the function.
+        //this kind of function is called "Anonymous Function"
+        greenButton.onclick = function(){
+            document.body.style.backgroundColor = 'green';
+        }
+
+        //for system-5
+        const goldenButton = document.getElementById('make-goldenrod');
+        goldenButton.addEventListener('click',makeGoldenRod)
+        function makeGoldenRod(){
+            document.body.style.backgroundColor = 'goldenrod';
+        }
+
+        //for system-6
+        const hotPinkButton = document.getElementById('make-hotpink');
+        hotPinkButton.addEventListener('click', function(){
+            document.body.style.backgroundColor="hotpink";
+        })
+
+        //for system-7
+        document.getElementById('light-blue').addEventListener('click', function(){
+            document.body.style.backgroundColor="lightblue"
+        })
+    </script>
+</body>
+</html>
