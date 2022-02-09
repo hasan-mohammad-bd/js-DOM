@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section id="section-container">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis saepe distinctio illo recusandae magni tempora ea et sunt? Nostrum, nulla.</p>
+        <p>Tenetur fugiat ipsam ut at nemo explicabo distinctio cum dicta. Laborum similique vero voluptatum ratione molestias repellendus sit laudantium iste.</p>
+        <p>Eum obcaecati nihil quibusdam expedita iusto praesentium corporis doloribus numquam deleniti sequi exercitationem cum, architecto quis magni, molestiae maxime sed!</p>
+        <p>Neque tempora sint iste autem quis optio dicta eveniet atque labore? Perferendis dolor dicta quam assumenda qui reiciendis cum tempora?</p>
+        <p>Dolorum, ratione et repellendus quae doloribus minima fugiat eligendi consequatur unde amet iusto magnam, nemo corrupti repellat totam maxime est!</p>
+    </section>
+    <textarea id="new-comment" name="" id="" cols="30" rows="10"></textarea> <br>
+    <button id="submit-comment">Post</button>
+    <script>
+        document.getElementById("submit-comment").addEventListener("click",function(){
+            const commentBox = document.getElementById("new-comment");
+
+            const p = document.createElement("p")
+            p.innerText = commentBox.value;
+
+            const section = document.getElementById("section-container")
+            section.appendChild(p);
+            commentBox.value = "";
+        })
+    </script>
+</body>
+</html>

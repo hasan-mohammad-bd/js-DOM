@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github delete</title>
+</head>
+<body>
+    <h2>Github delete button</h2>
+    <h3 id="delete-this">this will be deleted</h3>
+    <input type="text" name="" id="write-delete">
+    <button id="delete-btn" disabled>delete</button>
+</body>
+<script>
+    const btn = document.getElementById("delete-btn").addEventListener("click", function(){
+        const h3 = document.getElementById("delete-this").style.display="none";
+    })
+
+    document.getElementById("write-delete").addEventListener("focus", function(){
+        document.body.style.backgroundColor="red";
+    })
+
+    const disabled = document.getElementById("write-delete").addEventListener("keyup", function(even){ //forgot keyup
+        const disabledBtn =  document.getElementById("delete-btn");
+    
+        if(even.target.value == "delete"){
+           disabledBtn.removeAttribute("disabled");
+        }
+        else{
+            disabledBtn.setAttribute("disabled", true);//was wrong, setAttribute instead addAttribute
+        }
+    })
+
+
+</script>
+</html>
