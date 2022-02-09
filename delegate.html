@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Event Delegate</h2>
+    <ul id="item-container">
+        <li class="item">Lorem, ipsum.</li>
+        <li class="item">Explicabo, velit?</li>
+        <li class="item">Sed, libero.</li>
+        <li class="item">Saepe, est?</li>
+        <li class="item">Deleniti, odit.</li>
+        <li class="item">Distinctio, inventore?</li>
+    </ul>
+    <button id="add-item">add item</button>
+    <script>
+        const items = document.getElementsByClassName("item");
+        for(const item of items){
+            // //first way
+            // item.addEventListener("click", function(){
+            //      document.getElementById("item-container").removeChild(item);
+            //      //to delete the li at once clicking over it;
+            // })
+            //Second way
+            // item.addEventListener("click", function(event){
+            //      document.getElementById("item-container").removeChild(item);
+            //      //to delete the li at once clicking over it;
+            //      event.target.parentNode.removeChild(item);
+            // })
+        }
+        //adding item with button
+        document.getElementById("add-item").addEventListener("click",function(){
+            const li = document.createElement("li");
+            li.innerText = "Brand New Item"
+            const parent = document.getElementById("item-container");
+            parent.appendChild(li);
+        })
+        //third way //best way //event delegate
+        document.getElementById("item-container").addEventListener("click",function(even){
+            event.target.parentNode.removeChild(event.target);
+        })
+    </script>
+</body>
+</html>
