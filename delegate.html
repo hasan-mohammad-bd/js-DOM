@@ -19,7 +19,7 @@
     <button id="add-item">add item</button>
     <script>
         const items = document.getElementsByClassName("item");
-        for(const item of items){
+        // for(const item of items){
             // //first way
             // item.addEventListener("click", function(){
             //      document.getElementById("item-container").removeChild(item);
@@ -31,7 +31,7 @@
             //      //to delete the li at once clicking over it;
             //      event.target.parentNode.removeChild(item);
             // })
-        }
+        // }
         //adding item with button
         document.getElementById("add-item").addEventListener("click",function(){
             const li = document.createElement("li");
@@ -41,7 +41,7 @@
         })
         //third way //best way //event delegate
         document.getElementById("item-container").addEventListener("click",function(even){
-            event.target.parentNode.removeChild(event.target);
+            even.target.parentNode.removeChild(even.target); //dont understand the target property
         })
     </script>
 </body>
